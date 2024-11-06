@@ -22,13 +22,13 @@ L_CRT = ar rcs
 $(NAME) : $(OBJS)
 	$(L_CRT) $(NAME) $(OBJS)
 
-bonus : $(OBJS_B)
+bonus : all $(OBJS_B)
 	$(L_CRT) $(NAME) $(OBJS_B)
 	
 all :$(NAME)
 
-%.o : %.c
-	$(CC) $(FLAGS) -c $< -o $@
+#%.o : %.c		make has this built in but its a good practice to write it, there maybe some case where u will want ot do something different that the make default compilation..
+#	$(CC) $(FLAGS) -c $< -o $@
 
 clean :
 	rm -f *.o
